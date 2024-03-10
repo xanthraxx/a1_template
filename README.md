@@ -240,7 +240,7 @@ In many cases, CBS is able to improve the efficiency of the search by examining 
 [![CBS algorithm Further explanation and example provided in the following video](img/CBS.jpg)](https://www.youtube.com/watch?v=FnrZyL6965o)
 
 > [!TIP]
-> * **Low-level Algorithm**: Please adapt the implementation of **A\*** from part1. This **A\* variant** algorithm needs to **handle the set of constraints** properly to make sure that the returned path does respect them. You should also implement a low-level heuristic function accordingly, e.g. Manhattan Distance. 
+> * **Low-level Algorithm**: Please adapt the implementation of **A\*** from part1. This **A\* variant** algorithm needs to **handle the set of constraints** properly to make sure that the returned path does respect them. You should also implement a low-level heuristic function accordingly, e.g. an Distance. 
 > * You may break ties over the `lowest solution path cost` **randomly**.
 
 >[!IMPORTANT]
@@ -316,7 +316,7 @@ bash ./docker/docker_runner.sh python ./autograder.py --test-directory=test_case
 
 You use similar command to test individual each individual part. However, docker does not support GUI, so please make sure you added `-t` option when test each individual part.
 ```
-bash ./docker/docker_runner.sh python pacman.py -l mediumMaze -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic -t
+bash ./docker/docker_runner.sh python pacman.py -l mediumMaze -p SearchAgent -a fn=astar,heuristic=nullHeuristic -t
 ```
 
 ## Submission Instructions
