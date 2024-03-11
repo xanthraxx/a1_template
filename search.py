@@ -145,7 +145,7 @@ class MAPFProblem(SearchProblem):
     def __init__(self, startingGameState):
         "Initial function"
         "*** WARNING: DO NOT CHANGE!!! ***"
-        self.start = (startingGameState.getPacmanPosition(), foodGridtoDic(startingGameState.getFood()))
+        self.start = (startingGameState.getPacmanPosition(), startingGameState.getFood())
         self.walls = startingGameState.getWalls()
 
     def getStartState(self):

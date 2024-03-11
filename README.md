@@ -177,7 +177,7 @@ We have been exposed to single-agent problems in lectures and tutorials, but in 
 
 This is similar to problem 7 (practice part) of the Berkeley Pacman framework. You need to model the state space of a problem with multiple agents. Each agent has a target food of its own in the maze. Our task is to control all agents to eat all their corresponding food (points) in the maze. In other words, all agents need to **visit their corresponding target food position at least once**, but they do not neeed to stay at that position after that. 
 
-In order to implement this, there is a new problem called `MAPFSearchProblem` provided to you. Some of the variables are listed in the code comment blocks and the initialization for the functions. You will need to:
+In order to implement this, there is a new problem called `MAPFProblem` provided to you. Some of the variables are listed in the code comment blocks and the initialization for the functions. You will need to:
 
 1. Make sure `isGoalState` recognises whether the current state is a goal state. 
 2. Implement your transition function in `getSuccessors`, which should return a list of tuples that contain (`next_state`, `action_dict`, `cost`). `next_state` and `action_dict` should follow the required format detailed below. The cost would just be 1. Intuitively, each tuple contains all the possible successors states, where each successor is defined by the next state after all pacmans move simultaneously through the actions specified by the action dictionary.
@@ -195,10 +195,10 @@ In order to implement this, there is a new problem called `MAPFSearchProblem` pr
 
 For this part, you need to make sure these collisions are avoided:
 1. **Vertex Collision:** agents attempt to access the same position at the same time.
-2. **Swapping Collision:** agents attempt to swap their positions at the same time. 
+2. **Swapping Collision:** agents attempt to swap their positions at the same time. In other word, agents would crash into each other. 
 
 >[!TIP] 
-> Whether or not a **collision** is likely to occur is closely related to the nature of the problem itself. There are more conflict types, as there are several MAPF problem variants. If you are interested, please refer to the original paper for more details and let us know your thoughts about the possible challenges you forsee to handle these conflicts given your experience with the assignment. 
+> Whether or not a **collision** is likely to occur is closely related to the nature of the problem itself. There are more conflict types, as there are several MAPF problem variants. If you are interested in further explanations of these conflicts (including the above 2), please refer to the original paper for more details and let us know your thoughts about the possible challenges you forsee to handle these conflicts given your experience with the assignment. 
 
 
 You should insert your code into the template indicated by the comments ```*** YOUR CODE HERE FOR TASK 2 ***```, you can view the locations at these links:  [search.py#L158](search.py#L158) and [search.py#L177](search.py#L177).
