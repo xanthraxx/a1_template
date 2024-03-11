@@ -26,7 +26,7 @@ their github codebase**. Their codebase should be private, you will not have acc
 
 ## Part 1
 
-#### Self Evaluated Marks (3 marks):
+#### Self Evaluated Marks (2 marks):
 
 0
 
@@ -68,7 +68,7 @@ This graph is just an example of how you can include your plots in markdown. **P
 
 ## Part 2
 
-#### Self Evaluated Marks (3 marks):
+#### Self Evaluated Marks (2 marks):
 
 0
 
@@ -101,7 +101,7 @@ This graph is just an example of how you can include your plots in markdown. **P
 
 ## Part 3
 
-#### Self Evaluated Marks (4 marks):
+#### Self Evaluated Marks (3 marks):
 
 0
 
