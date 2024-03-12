@@ -29,24 +29,24 @@ echo ${current_path}
 res=`docker image inspect ${image_name}:${image_tag}`
 
 
-if [ ${#res} == 2 ] || [ ${force_build} == 1 ]
-then
-    docker image rm ${image_name}:${image_tag} 
-    docker build -f docker/Dockerfile -t ${image_name}:${image_tag} .
+# if [ ${#res} == 2 ] || [ ${force_build} == 1 ]
+# then
+docker image rm ${image_name}:${image_tag} 
+docker build -f docker/Dockerfile -t ${image_name}:${image_tag} .
 
-    echo ""
-    echo "--------------------"
-    echo "image built"
-    echo "--------------------"
-    echo ""
-else
+echo ""
+echo "--------------------"
+echo "image built"
+echo "--------------------"
+echo ""
+# else
 
-    echo ""
-    echo "--------------------"
-    echo "image exists"
-    echo "--------------------"
-    echo ""
-fi
+#     echo ""
+#     echo "--------------------"
+#     echo "image exists"
+#     echo "--------------------"
+#     echo ""
+# fi
 
 echo "CPU limit: ${CPU_limit}"
 echo "RAM limit: ${CPU_limit}"
