@@ -1,5 +1,6 @@
 class: "PacmanSearchTest"
 algorithm: "aStarSearch"
+searchProblemClass: "PositionSearchProblem"
 
 # The following specifies the layout to be used 
 layoutName: "mediumMaze"
