@@ -92,10 +92,10 @@ class SearchAgent(Agent):
             print('[SearchAgent] using function ' + fn)
             self.searchFunction = func
         else:
-            if heuristic in globals().keys():
-                heur = globals()[heuristic]
-            elif heuristic in dir(search):
+            if heuristic in dir(search):
                 heur = getattr(search, heuristic)
+            elif heuristic in globals().keys():
+                heur = globals()[heuristic]
             else:
                 raise AttributeError(heuristic + ' is not a function in searchAgents.py or search.py.')
             print('[SearchAgent] using function %s and heuristic %s' % (fn, heuristic))
@@ -103,9 +103,12 @@ class SearchAgent(Agent):
             self.searchFunction = lambda x: func(x, heuristic=heur)
 
         # Get the search problem type from the name
-        if prob not in globals().keys() or not prob.endswith('Problem'):
-            raise AttributeError(prob + ' is not a search problem type in SearchAgents.py.')
-        self.searchType = globals()[prob]
+        if prob not in dir(search):
+            if prob not in globals().keys() or not prob.endswith('Problem'):
+                raise AttributeError(prob + ' is not a search problem type in SearchAgents.py or search.py.')
+            self.searchType = globals()[prob]
+        else:
+            self.searchType = getattr(search, prob)
         print('[SearchAgent] using problem type ' + prob)
 
     def registerInitialState(self, state):
