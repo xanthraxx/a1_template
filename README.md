@@ -157,7 +157,7 @@ Taking inspiration from what we have discussed in our lectures and workshops, im
 > You don't have to implement A* Algorithm, as this has already been implemented for you in the codebase. Make sure A* calls the heuristic you implemented. You should be able to test the algorithm using the following command:
 
 ```
-python pacman.py -l mediumMaze -p SearchAgent -a fn=astar,heuristic=foodHeuristic
+python pacman.py -l mediumMaze -p SearchAgent -a fn=astar,prob=FoodSearchProblem,heuristic=foodHeuristic
 ```
 >[!IMPORTANT] 
 > Please do not change the arguments used above, unless you want to test a different functionality :wink:. You can explore other options via ``python pacman.py -h``. 
