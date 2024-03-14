@@ -19,7 +19,7 @@ import sys
 import textwrap
 import traceback
 
-from func_timeout import func_timeout
+from func_timeout import func_timeout, FunctionTimedOut
 
 # import project specific code
 import layout
@@ -601,9 +601,10 @@ class MAPFTest(testClasses.TestCase):
             sol = func_timeout(self.timeout, search.bfs, args=(problem,))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
-        except TimeoutError:
+        except FunctionTimedOut:
             # traceback.print_exc()
             grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            grades.addMessage('FAIL: %s' % self.path)
             return False
         except:
             traceback.print_exc()
@@ -660,9 +661,10 @@ class cbsTest(testClasses.TestCase):
             sol = func_timeout(self.timeout, search.cbs, args=(problem,))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
-        except TimeoutError:
+        except FunctionTimedOut:
             # traceback.print_exc()
             grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            grades.addMessage('FAIL: %s' % self.path)
             return False
         except:
             traceback.print_exc()
@@ -724,9 +726,10 @@ class HeuristicGrade(testClasses.TestCase):
             path = func_timeout(self.timeout, search.astar, args=(problem, heuristic))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
-        except TimeoutError:
+        except FunctionTimedOut:
             # traceback.print_exc()
             grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            grades.addMessage('FAIL: %s' % self.path)
             return False
         except:
             traceback.print_exc()
