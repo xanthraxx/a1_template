@@ -601,6 +601,10 @@ class MAPFTest(testClasses.TestCase):
             sol = func_timeout(self.timeout, search.bfs, args=(problem,))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
+        except TimeoutError:
+            # traceback.print_exc()
+            grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            return False
         except:
             traceback.print_exc()
             grades.addMessage('FAIL: %s' % self.path)
@@ -656,6 +660,10 @@ class cbsTest(testClasses.TestCase):
             sol = func_timeout(self.timeout, search.cbs, args=(problem,))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
+        except TimeoutError:
+            # traceback.print_exc()
+            grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            return False
         except:
             traceback.print_exc()
             grades.addMessage('FAIL: %s' % self.path)
@@ -716,6 +724,10 @@ class HeuristicGrade(testClasses.TestCase):
             path = func_timeout(self.timeout, search.astar, args=(problem, heuristic))
             execute_time = datetime.datetime.now() - start_time
             grades.addMessage('Search time: %s' % execute_time)
+        except TimeoutError:
+            # traceback.print_exc()
+            grades.addMessage('FAIL: timeout after %ds' % self.timeout)
+            return False
         except:
             traceback.print_exc()
             grades.addMessage('FAIL: %s' % self.path)
