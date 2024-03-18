@@ -6,7 +6,7 @@
 
 **Student:**
 
-your full name - your student number - your canvas student login
+Susannah Ilic 864672 ilics
 
 > [!IMPORTANT]
 > Replace the lines above with your correct details. Your student number should only be the **numbers**. For example:
